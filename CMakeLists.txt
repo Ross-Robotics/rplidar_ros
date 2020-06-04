@@ -3,13 +3,15 @@ project(rplidar_ros)
 
 set(RPLIDAR_SDK_PATH "./sdk/")
 
-FILE(GLOB RPLIDAR_SDK_SRC 
+FILE(GLOB RPLIDAR_SDK_SRC
   "${RPLIDAR_SDK_PATH}/src/arch/linux/*.cpp"
   "${RPLIDAR_SDK_PATH}/src/hal/*.cpp"
   "${RPLIDAR_SDK_PATH}/src/*.cpp"
 )
 
 find_package(catkin REQUIRED COMPONENTS
+  tf2
+  tf2_ros
   roscpp
   rosconsole
   sensor_msgs
