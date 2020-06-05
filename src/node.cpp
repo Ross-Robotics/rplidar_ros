@@ -196,7 +196,7 @@ void publish_tf_compensation(const std::string* parent_frame, const std::string*
   transformStamped.transform.translation.y = 0.0;
   transformStamped.transform.translation.z = 0.0;
   tf2::Quaternion q;
-  q.setRPY(M_PI, 0, 0);
+  q.setRPY(0, 0, M_PI);
   transformStamped.transform.rotation.x = q.x();
   transformStamped.transform.rotation.y = q.y();
   transformStamped.transform.rotation.z = q.z();
