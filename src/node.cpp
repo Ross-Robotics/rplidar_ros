@@ -237,7 +237,7 @@ int main(int argc, char * argv[]) {
 
     if(publish_rotated_frame) {
         intermediate_frame = frame_id;
-        frame_id = frame_id + "_raw";
+        frame_id = frame_id + "_rotated";
     }
 
     ROS_INFO("RPLIDAR running on ROS package rplidar_ros. SDK Version:"RPLIDAR_SDK_VERSION"");
