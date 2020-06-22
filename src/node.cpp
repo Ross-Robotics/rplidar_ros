@@ -214,10 +214,6 @@ int main(int argc, char * argv[]) {
     nh_private.param<std::string>("scan_mode", scan_mode, std::string());
     nh_private.param<bool>("rotate_scan", rotate_scan, false);
 
-        intermediate_frame = frame_id;
-        frame_id = frame_id + "_rotated";
-    }
-
     ROS_INFO("RPLIDAR running on ROS package rplidar_ros. SDK Version:"RPLIDAR_SDK_VERSION"");
 
     u_result     op_result;
