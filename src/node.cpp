@@ -193,7 +193,6 @@ int main(int argc, char * argv[]) {
     int tcp_port = 20108;
     int serial_baudrate = 115200;
     std::string frame_id;
-    std::string intermediate_frame; //frame published when rotate_scan is set to true
     bool inverted = false;
     bool angle_compensate = true;
     bool rotate_scan;
@@ -329,8 +328,8 @@ int main(int argc, char * argv[]) {
             float angle_max = DEG2RAD(359.0f);
             if(rotate_scan)
             {
-                float angle_min = DEG2RAD(-180.0f);
-                float angle_max = DEG2RAD(179.0f);
+                angle_min = DEG2RAD(-180.0f);
+                angle_max = DEG2RAD(179.0f);
             }
             if (op_result == RESULT_OK) {
                 if (angle_compensate) {
@@ -382,11 +381,6 @@ int main(int argc, char * argv[]) {
                 // All the data is invalid, just publish them
                 float angle_min = DEG2RAD(0.0f);
                 float angle_max = DEG2RAD(359.0f);
-                if(rotate_scan)
-                {
-                    float angle_min = DEG2RAD(-180.0f);
-                    float angle_max = DEG2RAD(179.0f);
-                }
                 publish_scan(&scan_pub, nodes, count,
                              start_scan_time, scan_duration, inverted,
                              angle_min, angle_max, max_distance,
